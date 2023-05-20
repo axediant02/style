@@ -1,9 +1,14 @@
+<head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="teacher.css">
+</head>
+
 <?php
 session_start();
 
 // Check if user is logged in and has teacher role
 if (!isset($_SESSION['user_id']) || $_SESSION['acct_type'] != 'teacher') {
-    header('Location: login.php');
+    header('Location: index.php');
     exit;
 }
 
@@ -31,31 +36,42 @@ $get_students = "SELECT students.sid, students.firstname, students.lastname, stu
 $result = mysqli_query($conn, $get_students);
 
 // Display student and grade data in a table
-echo '<h2>Welcome, ' . $teacher['firstname'] . ' ' . $teacher['lastname'] . '!</h2>';
+echo '<h2> Hi ' . $teacher['firstname'] . ' ' . $teacher['lastname'] . '!</h2>';
+echo '<p> Teacher'.'<p>';
 echo '<p>Subject: ' . $subject['subject'] . '</p>';
 echo '<p>Subject code: '.$subject['subject_code'].'</p>';
+echo '<div class="table-container">';
 echo '<table>';
-echo '<tr><th>No.</th><th>Firstname</th><th>Lastname</th><th>Course</th><th>Grade</th></tr>';
+echo '<tr><th>Remove</th><th>No.</th><th>Firstname</th><th>Lastname</th><th>Course</th><th>Give Grade</th><th>Grade</th></tr>';
 
 $counter = 1;
 while ($row = mysqli_fetch_assoc($result)) {
     echo '<tr>';
-    echo '<td><a href="remove_student.php?student_id=' . $row['sid'] . '">DEL</a></td>';
+    echo '<td><a  id="cross" href="remove_student.php?student_id=' . $row['sid'] . '">&times;</a></td>';
     echo '<td>' . $counter . '</td>';
     echo '<td>' . $row['firstname'] . '</td>';
     echo '<td>' . $row['lastname'] . '</td>';
     echo '<td>' . $row['course'] . '</td>';
-    echo '<td><a href="edit_grade.php?student_id=' . $row['sid'] . '">Edit</a></td>';
-    echo '<td><a href="add_grade.php?student_id=' . $row['sid'] . '">Give Grade</a></td>';
+    echo '<td><a id="noticeBtn" href="add_grade.php?student_id=' . $row['sid'] . '">Give Grade</a></td>';
     echo '<td>' . $row['grade'] . '</td>';
     echo '</tr>';
     $counter++;
 }
 
 echo '</table>';
+   echo  '</div>';
 
 // Close the database connection
 mysqli_close($conn);
 ?>
 
-<a href="logout.php">Logout</a>
+<a href="logout.php" class="logout-button">Logout</a>
+
+
+<script>
+        $(document).ready(function() {
+            $('#noticeBtn').click(function() {
+                window.open('add_grade.php', '_blank', 'width=500,height=500');
+            });
+        });
+    </script>
