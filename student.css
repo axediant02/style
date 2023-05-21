@@ -36,19 +36,19 @@ h1 {
 }
 
 /* Logout Section */
-#logout-section a {
+/* #logout-section a {
     text-decoration: none;
     color: #0000FF;
     padding: 4px 8px;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 
-}
+} */
 
-#logout-section a:hover {
+/* #logout-section a:hover {
     background-color: #0000FF;
     color: #FFFFFF;
-}
+} */
 
 .subject-code{
     position: absolute;
@@ -70,7 +70,10 @@ p{
     margin-bottom: 50px;
     margin-top: 10px;
 }
-
-.logout-section{
-    padding: 10px;
+#logout-section {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
 }
