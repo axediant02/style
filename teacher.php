@@ -67,11 +67,3 @@ mysqli_close($conn);
 
 <a href="logout.php" class="logout-button">Logout</a>
 
-
-<script>
-        $(document).ready(function() {
-            $('#noticeBtn').click(function() {
-                window.open('add_grade.php', '_blank', 'width=500,height=500');
-            });
-        });
-    </script>

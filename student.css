@@ -1,34 +1,76 @@
+/* Body */
 body {
     font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Welcome Section */
+#welcome-section {
+    margin-bottom: 20px;
 }
 
 h1 {
-    text-align: center;
-    color: #FF0000;
+    color: black;
 }
 
-table {
+/* Table Section */
+#table-section table {
     width: 100%;
     border-collapse: collapse;
+    margin: 0 auto;
 }
 
-th, td {
+#table-section th, #table-section td {
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #CCCCCC;
 }
 
-a {
-    text-decoration: none;
-    color: #0000FF;
-    display: inline-block;
-    padding: 4px 8px;
-    border: 1px solid #0000FF;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+#table-section th {
+    background-color: #000000;
+    color: #FFFFFF;
 }
 
-a:hover {
+#table-section tr:nth-child(even) {
+    background-color: #F5F5F5;
+}
+
+/* Logout Section */
+#logout-section a {
+    text-decoration: none;
+    color: #0000FF;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+
+}
+
+#logout-section a:hover {
     background-color: #0000FF;
     color: #FFFFFF;
+}
+
+.subject-code{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 20px;
+    justify-content: center;
+}
+
+.subject-code{
+    padding: 5px;
+}
+
+.h2 {
+    top: 0;
+}
+
+p{
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+.logout-section{
+    padding: 10px;
 }

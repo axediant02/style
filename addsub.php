@@ -61,16 +61,26 @@ if (isset($_POST['submit'])) {
 <html>
 <head>
     <title>Select Subject</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="addsub.css">
 
 </head>
 <body>
+    <!-- <div class="h2">
     <h2>Add Subject</h2>
+    </div> -->
+
+    <div class="subject-code">
     <form method="post" action="">
+        <div class="addsub">
+        <label>Add Subject</label>
+        </div>
         <label>Subject Code:</label>
         <input type="text" name="subject_code">
         <br>
+        <div id="sumit-subject">
         <input type="submit" name="submit" value="Select Subject">
+        </div>
     </form>
+    </div>
 </body>
 </html>

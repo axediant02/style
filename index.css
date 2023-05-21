@@ -34,7 +34,6 @@ body{
 .container input[type="password"],
 .container input[type="submit"] {
   padding: 10px;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
@@ -59,4 +58,10 @@ body{
 
 .container a:hover {
   text-decoration: underline;
+}
+
+form{
+  padding: 5px;
+  margin: 10px;
+
 }
